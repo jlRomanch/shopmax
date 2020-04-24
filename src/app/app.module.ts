@@ -18,6 +18,8 @@ import { RatingPipe } from './shared/pipes/rating/rating.pipe';
 import { DiscountPipe } from './shared/pipes/discount/discount.pipe';
 import { SwiperComponent } from './shared/components/swiper/swiper.component';
 
+import ProductItem from './components/product-item/product-item.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { SwiperComponent } from './shared/components/swiper/swiper.component';
     ItemsComponent,
     RatingPipe,
     DiscountPipe,
-    SwiperComponent
+    SwiperComponent,
+    ProductItem
   ],
   imports: [
     BrowserModule,

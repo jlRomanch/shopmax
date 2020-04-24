@@ -1,0 +1,37 @@
+.product-item {
+    
+    h3 {
+        margin: 0;
+        margin-top: 30px;
+        color: gray;
+        font-size: 18px;
+
+        transition: .3s all ease;
+        cursor: pointer;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    .old_price {
+        text-decoration: line-through;
+    }
+
+    .product-image {
+        background-color: #f9f9f9;
+        max-width: 330px;
+        max-height: 400px;
+        height: 400px;
+        width: 330px;
+        overflow: hidden;
+        padding-top: 40px;
+
+        display: flex;
+        justify-content: center;
+    }
+    .price {
+        color: #000;
+        font-weight: bold;
+    }
+} 

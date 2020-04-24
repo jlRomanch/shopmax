@@ -1,1 +1,9 @@
-<p>shop works!</p>
+
+<div class="container">
+    <h2>Shop All</h2>
+    <ul class="product-list">
+        <li *ngFor="let product of products">
+            <product-item [product]="product"></product-item>
+        </li>
+    </ul>
+</div>
