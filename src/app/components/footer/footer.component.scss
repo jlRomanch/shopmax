@@ -1,0 +1,75 @@
+.footer {
+  margin: 65px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-section {
+    &-title {
+      font-size: 14px;
+      color: #25262a;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+  }
+
+  &-links {
+    width: 445px;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      color: #5c626e;
+
+      &:not(:nth-last-child(1)) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &-promo {
+    width: 255px;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      color: #737b8a
+    }
+  }
+
+  .promo-image {
+    &__img {
+      width: 255px;
+      height: 145px;
+    }
+  }
+
+  &-contact-info {
+    width: 255px;
+
+    .contact-info-item {
+      display: flex;
+      margin-bottom: 20px;
+
+      .icon {
+        width: 30px;
+        font-size: 20px;
+        color: var(--primary);
+        flex: none;
+      }
+    }
+
+    .subscription-box {
+      margin-top: 50px;
+
+      >label {
+        letter-spacing: 5px;
+      }
+    }
+  }
+}

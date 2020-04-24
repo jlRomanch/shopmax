@@ -1,0 +1,29 @@
+.scroll-top {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+  transform: scale(0) rotate(90deg);
+  transition: .25s;
+
+  &-inner {
+
+    i {
+      cursor: pointer;
+      transform: rotate(-90deg);
+      transition: .15s;
+      font-size: 30px;
+    }
+
+    &:hover {
+      i {
+        transform: rotate(-90deg) translateX(2.5px);
+        font-size: 30px;
+        text-shadow: -5px 0 5px rgba(black, .25);
+      }
+    }
+  }
+
+  &.show {
+    transform: none;
+  }
+}

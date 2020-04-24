@@ -1,0 +1,17 @@
+@mixin grid($cols, $gap, $m_bottom: $gap) {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    width: calc((100% - (#{$cols} - 1) * #{$gap}) / #{$cols});
+    margin-bottom: $m_bottom;
+
+    &:not(:nth-child(#{$cols}n)) {
+      margin-inline-end: $gap;
+    }
+
+    &:nth-child(#{$cols}n) {
+      margin-inline-end: unset;
+    }
+  }
+}

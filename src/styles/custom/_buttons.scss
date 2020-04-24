@@ -1,0 +1,13 @@
+.btn {
+  transition: .15s;
+
+  &-flat {
+    border-radius: unset;
+  }
+
+  &-dark {
+    &:hover {
+      background-color: rgba($dark, .85);
+    }
+  }
+}

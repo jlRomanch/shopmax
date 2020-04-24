@@ -1,0 +1,115 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg py-4">
+    <a class="navbar-brand" routerLink="home">shopmax</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home">home</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="shop">shop</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="catalog">catalog</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="new-arrivals">new arrivals</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="contact">contact</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav navbar-handlers">
+        <li class="nav-item">
+          <span (click)="openSearchModal(modal_search)" class="nav-link">
+            <i class="fas fa-search"></i>
+          </span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">
+            <i class="far fa-heart"></i>
+          </span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">
+            <i class="fas fa-shopping-bag"></i>
+            <div class="nav-link-notify bg-primary text-white">2</div>
+          </span>
+        </li>
+        <li class="nav-item">
+          <span (click)="openLoginModal(modal_login)" class="nav-link">
+            <i class="fas fa-user"></i>
+          </span>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- modals -->
+<!-- search modal -->
+<ng-template #modal_search let-modal>
+  <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="Key words...">
+    <div class="input-group-append">
+      <button class="btn btn-light">Search</button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- login modal -->
+<ng-template #modal_login let-modal>
+  <div class="card shadow">
+    <div class="card-header">
+      <span>Sign in / Sign up</span>
+    </div>
+
+    <div class="card-body">
+      <ng-container *ngIf="mode === 'signin'; else signup">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control">
+        </div>
+
+        <div class="form-group mt-4">
+          <div class="btn btn-block btn-primary">Sign in</div>
+        </div>
+      </ng-container>
+      <ng-template #signup>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="johndoe@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control">
+        </div>
+
+        <div class="form-group mt-4">
+          <div class="btn btn-block btn-primary">Sign up</div>
+        </div>
+      </ng-template>
+    </div>
+
+    <div *ngIf="mode === 'signin'" class="card-footer d-flex">
+      <span (click)="mode = 'signup'" class="btn text-secondary mx-auto">Don't have account yet?</span>
+    </div>
+  </div>
+</ng-template>

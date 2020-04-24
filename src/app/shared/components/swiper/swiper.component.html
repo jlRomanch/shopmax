@@ -1,0 +1,49 @@
+<!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div *ngFor="let popular of slides" class="swiper-slide">
+      <div class="product-item has-footer">
+        <div class="product-item-inner">
+          <div class="product-item-body">
+            <div class="product-item-img">
+              <img [src]="popular.img" alt="" class="product-item__img">
+            </div>
+          </div>
+
+          <div class="product-item-footer">
+            <a [routerLink]="'shop/'+popular.name" class="product-item-name"> {{ popular.name }} </a>
+            <div class="product-item-price">
+              <ng-container *ngIf="popular.discount; else noDiscount">
+                <del class="mr-2 text-muted">{{ popular.price | currency }}</del>
+                <span>{{ popular | discount | currency }}</span>
+              </ng-container>
+              <ng-template #noDiscount>
+                <span>{{ popular.price | currency }}</span>
+              </ng-template>
+
+            </div>
+            <div *ngIf="popular.rating" class="product-item-rating">
+              <span *ngFor="let star of popular.rating | rating">
+                <i *ngIf="star === 1" class="material-icons">star</i>
+                <i *ngIf="star === 0" class="material-icons">star_border</i>
+                <i *ngIf="star === 2" class="material-icons">star_half</i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-handlers">
+    <div class="swiper-btn-prev">
+      <i class="material-icons">arrow_back</i>
+    </div>
+    <div class="swiper-btn-next">
+      <i class="material-icons">arrow_forward</i>
+    </div>
+  </div>
+</div>

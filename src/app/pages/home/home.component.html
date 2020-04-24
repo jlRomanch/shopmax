@@ -1,0 +1,160 @@
+<div class="main-poster bg-light">
+  <div class="container main-poster-container">
+    <div class="main-poster-item main-poster-image">
+      <div class="mx-auto">
+        <img data-aos="fade-in" src="assets/images/model_3.png" alt="" class="main-poster-image__img" />
+      </div>
+    </div>
+
+    <div class="main-poster-item main-poster-content">
+      <div class="main-poster-content-subtitle">
+        #new summer collection 2019
+      </div>
+      <h1 class="main-poster-content-title">arrivals sales</h1>
+      <div class="btn btn-dark btn-flat text-uppercase px-4 py-2">shop now</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="section">
+    <div class="section-title my-5">
+      <h2>
+        discover <br />
+        the collections
+      </h2>
+    </div>
+
+    <div class="collections-wrapper">
+      <div data-aos="fade-in" class="product-item">
+        <div class="product-item-inner-square">
+          <div class="product-item-body">
+            <div class="product-item-img">
+              <img src="assets/images/model_4.png" alt="" class="product-item__img" />
+            </div>
+            <div class="product-item-content">
+              <div class="bg-white">
+                <div class="btn btn-lg btn-flat btn-outline-dark border-none px-4 py-2 shadow">
+                  <span class="mr-2">Show</span>
+                  <small class="text-muted">25 items</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="doubled-parts">
+        <div data-aos="fade-in" class="product-item">
+          <div class="product-item-inner-square">
+            <div class="product-item-body">
+              <div class="product-item-img">
+                <img src="assets/images/model_5.png" alt="" class="product-item__img" />
+              </div>
+              <div class="product-item-content">
+                <div class="bg-white">
+                  <div class="btn btn-lg btn-flat btn-outline-dark border-none px-4 py-2 shadow">
+                    <span class="mr-2">Show</span>
+                    <small class="text-muted">25 items</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-in" class="product-item">
+          <div class="product-item-inner-square">
+            <div class="product-item-body">
+              <div class="product-item-img">
+                <img src="assets/images/model_6.png" alt="" class="product-item__img" />
+              </div>
+              <div class="product-item-content">
+                <div class="bg-white">
+                  <div class="btn btn-lg btn-flat btn-outline-dark border-none px-4 py-2 shadow">
+                    <span class="mr-2">Show</span>
+                    <small class="text-muted">25 items</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title my-5">
+      <h2>
+        popular products
+      </h2>
+    </div>
+
+    <div class="products-container">
+      <div *ngFor="let popular of populars" class="product-item has-footer">
+        <div class="product-item-inner">
+          <div class="product-item-body">
+            <div class="product-item-img">
+              <img [src]="popular.img" alt="" class="product-item__img" />
+            </div>
+          </div>
+
+          <div class="product-item-footer">
+            <a [routerLink]="'shop/' + popular.name" class="product-item-name">
+              {{ popular.name }}
+            </a>
+            <div class="product-item-price">
+              <ng-container *ngIf="popular.discount; else noDiscount">
+                <del class="mr-2 text-muted">{{
+                  popular.price | currency
+                }}</del>
+                <span>{{ popular | discount | currency }}</span>
+              </ng-container>
+              <ng-template #noDiscount>
+                <span>{{ popular.price | currency }}</span>
+              </ng-template>
+            </div>
+            <div *ngIf="popular.rating" class="product-item-rating">
+              <span *ngFor="let star of popular.rating | rating">
+                <i *ngIf="star === 1" class="material-icons">star</i>
+                <i *ngIf="star === 0" class="material-icons">star_border</i>
+                <i *ngIf="star === 2" class="material-icons">star_half</i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title-center my-5">
+      <h2>
+        most rated
+      </h2>
+    </div>
+
+    <div class="slider-wrap pt-5">
+      <app-swiper [slides]="populars"></app-swiper>
+    </div>
+  </section>
+</div>
+
+<div class="main-poster bg-light mt-5">
+  <div class="container main-poster-container">
+    <div class="main-poster-item main-poster-image">
+      <div class="mx-auto">
+        <img src="assets/images/model_6.png" alt="" class="main-poster-image__img" />
+      </div>
+    </div>
+
+    <div class="main-poster-item main-poster-content">
+      <div class="main-poster-content-subtitle">
+        #new summer collection 2019
+      </div>
+      <h1 class="main-poster-content-title">new shoes</h1>
+      <div class="btn btn-dark btn-flat text-uppercase px-4 py-2">shop now</div>
+    </div>
+  </div>
+</div>

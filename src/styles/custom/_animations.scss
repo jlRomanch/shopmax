@@ -1,0 +1,18 @@
+.modal-content {
+  animation-name: modal_animation;
+  animation-duration: 0.3s;
+}
+
+@keyframes modal_animation {
+  0% {
+    transform: scale(0.5)
+  }
+
+  75% {
+    transform: scale(1.1)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}

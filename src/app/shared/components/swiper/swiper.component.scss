@@ -1,0 +1,33 @@
+.swiper {
+  &-container {
+    padding-bottom: 55px;
+  }
+
+  &-handlers {
+    position: absolute;
+    z-index: 9;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+
+    >div {
+      cursor: pointer;
+
+      .material-icons {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &-button {
+    color: #25262a;
+
+    &-disabled {
+      cursor: default !important;
+      color: #5c626e;
+    }
+  }
+}
