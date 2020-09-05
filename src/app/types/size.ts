@@ -3,3 +3,9 @@ export enum Size {
     Medium,
     Large
 }
+
+export const ALL_SIZES = [
+    Size.Small,
+    Size.Medium,
+    Size.Large
+];

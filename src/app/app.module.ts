@@ -19,6 +19,10 @@ import { DiscountPipe } from './shared/pipes/discount/discount.pipe';
 import { SwiperComponent } from './shared/components/swiper/swiper.component';
 
 import ProductItem from './components/product-item/product-item.component';
+import CategoryList from './components/category-list/category-list.component';
+import CategoryName from './pipes/category-name.pipe';
+import FilterList from './components/filter-list/filter-list.component';
+import FilterNamePipe from './pipes/filter-name.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import ProductItem from './components/product-item/product-item.component';
     RatingPipe,
     DiscountPipe,
     SwiperComponent,
-    ProductItem
+    ProductItem,
+    CategoryList,
+    FilterList,
+    CategoryName,
+    FilterNamePipe,
   ],
   imports: [
     BrowserModule,

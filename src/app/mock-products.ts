@@ -1,5 +1,6 @@
 import { Product } from './types/product';
 import { Category } from './types/category';
+import {Size} from './types/size';
 
 export const PRODUCTS: Product[] = [
     {
@@ -8,6 +9,7 @@ export const PRODUCTS: Product[] = [
         name: "Grey Shoe",
         price: 20,
         image: "assets/images/prod_2.png",
+        size: Size.Large,
     },
     {
         id: "shoes-2",
@@ -15,7 +17,8 @@ export const PRODUCTS: Product[] = [
         name: "Blue Shoe High Heels",
         price: 28,
         oldPrice: 46,
-        image: "assets/images/prod_3.png"
+        image: "assets/images/prod_3.png",
+        size: Size.Medium,
     },
     {
         id: "model-5",

@@ -1,0 +1,10 @@
+<div class="category-list border p-4 rounded mb-4">
+  <h5 class="categories-name mb-3">Categories</h5>
+  <ul>
+    <li *ngFor="let category of categories">
+      {{ category | categoryName }}
+    </li>
+  </ul>
+</div>
+
+

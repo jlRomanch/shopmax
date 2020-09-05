@@ -1,0 +1,8 @@
+<div class="filter-list border p-4 rounded mb-4">
+  <h5 class="sizes-name mb-3">Size</h5>
+  <ul>
+    <li *ngFor="let size of sizes">
+      {{ size | filterName }}
+    </li>
+  </ul>
+</div>
